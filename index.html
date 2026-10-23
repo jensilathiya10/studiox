@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#efe7da" />
+    
+    <title>STUDIO_X | Photography &amp; Cinematic Films in Surat</title>
+    <meta name="description" content="STUDIO_X is a photography and cinematic film studio in Surat, Gujarat. Your Story. Our Vision." />
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wdth-normal.woff2" />
+    <style>
+      html { background: #efe7da; }
+      body { margin: 0; background: #efe7da; }
+    </style>
+    <script>
+      // Home only: start fetching the hero photograph (the LCP image) before JS boots.
+      // srcset/sizes mirror the <picture> in src/components/Hero.tsx so the browser reuses it.
+      (function () {
+        if (location.pathname !== "/") return;
+        var l = document.createElement("link");
+        l.rel = "preload";
+        l.as = "image";
+        l.type = "image/avif";
+        l.setAttribute("imagesrcset", "/hero/hero-480.avif 480w, /hero/hero-720.avif 720w, /hero/hero-960.avif 960w, /hero/hero-1200.avif 1200w");
+        l.setAttribute("imagesizes", "(min-width: 768px) 34vw, 62vw");
+        l.setAttribute("fetchpriority", "high");
+        document.head.appendChild(l);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="color:#121110;font-family:serif;padding:2rem">STUDIO_X. Photography &amp; cinematic films in Surat. Please enable JavaScript to view this site, or find us on <a style="color:#C8452A" href="https://www.instagram.com/studio__x/">Instagram</a>.</p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
